@@ -1,3 +1,4 @@
+/* Reset CSS */
 html,
 body,
 div,
@@ -87,6 +88,7 @@ video {
     vertical-align: baseline;
 }
 
+/* Set default display for new HTML5 elements */
 article,
 aside,
 details,
@@ -101,43 +103,48 @@ section {
     display: block;
 }
 
+/* Body defaults */
 body {
     line-height: 1;
+    font-family: Arial, sans-serif;
+    background-color: #F5F5F5;
+    font-family: 'Poppins', sans-serif;
 }
 
+/* Remove list styles */
 ol,
 ul {
     list-style: none;
 }
 
+/* Remove quotes for blockquote and q elements */
 blockquote,
 q {
     quotes: none;
 }
 
-blockquote:before,
-blockquote:after,
-q:before,
-q:after {
-    content: '';
-    content: none;
-}
-
+/* Border collapsing for tables */
 table {
     border-collapse: collapse;
     border-spacing: 0;
 }
 
+/* Anchor tag default styles */
 a {
     color: inherit;
     text-decoration: none;
 }
 
+/* Image to inherit width */
 img {
     width: inherit;
 }
 
-button {
+/* Reset buttons, inputs, selects, textareas */
+button,
+input,
+textarea,
+select {
     font-family: inherit;
     font-size: inherit;
     color: inherit;
@@ -147,26 +154,61 @@ button {
     background-color: unset;
 }
 
-input {
-    border: none;
-    color: inherit;
-    font-size: inherit;
-    font-weight: inherit;
-    font-family: inherit;
+/* Custom variables */
+:root {
+    --color-primary: #2A7AE4;
+    --color-white: #FFF;
+    --color-black: #000;
+    --color-light-gray: #EDEDED;
+    --color-medium-gray: #464646;
 }
 
-textarea {
-    border: none;
-    color: inherit;
-    font-size: inherit;
-    font-weight: inherit;
-    font-family: inherit;
+/* About container styles */
+.about-container {
+    padding: 30px 120px;
+    margin: 0 auto;
+    max-width: 1200px;
 }
 
-select {
-    border: none;
-    color: inherit;
-    font-size: inherit;
-    font-weight: inherit;
-    font-family: inherit;
+.about-container {
+    font-size: 16px;
+}
+
+/* Flex layout for the main list */
+.about-container ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+/* Flex layout for the sub-items */
+.about-itens {
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    gap: 2em;
+    color: var(--color-medium-gray);
+    /* Adjusted gap for better scalability */
+}
+
+.name,
+.persona-email {
+    color: var(--color-medium-gray);
+    font-size: 1.5rem;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .about-container {
+        padding: 20px 40px;
+    }
+
+    .about-itens {
+        gap: 1em;
+        /* Reduce gap for smaller screens */
+    }
 }
