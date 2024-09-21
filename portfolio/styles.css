@@ -163,15 +163,15 @@ select {
     --color-medium-gray: #464646;
 }
 
+/* HEADER */
+
 /* About container styles */
 .about-container {
     padding: 30px 120px;
     margin: 0 auto;
-    max-width: 1200px;
-}
-
-.about-container {
     font-size: 16px;
+    height: 88px;
+    width: 1136px;
 }
 
 /* Flex layout for the main list */
@@ -201,14 +201,129 @@ select {
 }
 
 
+/* INITIAL SECTION */
+.initial-section-container {
+    padding: 30px 60px;
+    margin: 0 auto;
+    font-size: 16px;
+    max-width: 1100px;
+    display: flex;
+    justify-content: space-between;
+    /* Texto e imagem se afastam */
+    align-items: flex-start;
+    flex-wrap: wrap;
+    /* Flexível para telas menores */
+}
+
+.initial-section-text {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    /* Limita a largura do bloco de texto */
+    flex: 1;
+    /* Expande para ocupar espaço disponível */
+}
+
+.hello-text {
+    color: var(--color-medium-gray);
+    font-weight: bold;
+    font-size: 48px;
+    line-height: 1.2;
+    text-align: left;
+    word-wrap: break-word;
+    /* Controla a quebra de palavras */
+    white-space: normal;
+    /* Impede que o texto force quebras desnecessárias */
+    max-width: 100%;
+    /* Garante que o texto não ultrapasse a largura do container */
+}
+
+.about-initial-text {
+    margin-top: 20px;
+    font-size: 20px;
+    color: var(--color-medium-gray);
+    font-weight: 400;
+    line-height: 1.5;
+    text-align: left;
+    word-wrap: break-word;
+    /* Controla quebras de palavras */
+    white-space: normal;
+    /* Não forçar quebras */
+    max-width: 100%;
+    /* Limita a largura do parágrafo */
+}
+
+.initial-section-list {
+    display: flex;
+    margin-top: 20px;
+    gap: 30px;
+    padding-left: 0;
+    flex-wrap: wrap;
+    /* Permite que os links se ajustem em telas menores */
+}
+
+.initial-section-list li::after {
+    content: url('./assets/icons/up-arrow.svg');
+    /* Caminho para o seu ícone */
+    position: absolute;
+    right: -10px;
+    /* Ajuste a posição conforme necessário */
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.initial-section-list li {
+    position: relative;
+    /* Necessário para o posicionamento absoluto do ícone */
+    list-style: none;
+    /* Remove o estilo de lista padrão */
+}
+
+.initial-section-list a {
+    color: var(--color-primary);
+    font-size: 18px;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.initial-section-list a:hover {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+}
+
+.portfolio-picture {
+    border-radius: 50%;
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    margin-left: 20px;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
-    .about-container {
-        padding: 20px 40px;
+    .initial-section-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
     }
 
-    .about-itens {
-        gap: 1em;
-        /* Reduce gap for smaller screens */
+    .hello-text {
+        font-size: 36px;
+    }
+
+    .about-initial-text {
+        font-size: 18px;
+    }
+
+    .portfolio-picture {
+        width: 250px;
+        height: 250px;
+    }
+
+    .initial-section-list {
+        justify-content: center;
     }
 }
