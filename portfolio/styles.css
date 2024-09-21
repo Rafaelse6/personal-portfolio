@@ -302,6 +302,42 @@ select {
     margin-left: 20px;
 }
 
+/* ABOUT ME */
+.about-me-section {
+    background-color: rgba(42, 122, 228, 0.3);
+    width: 100%;
+    min-height: 300px;
+    padding: 60px 0;
+}
+
+.about-me-container {
+    display: flex;
+    flex-direction: column;
+    padding: 0 60px;
+    margin: 0 auto;
+    font-size: 16px;
+    max-width: 1100px;
+    align-items: flex-start;
+}
+
+.about-me-title {
+    color: var(--color-medium-gray);
+    font-weight: bold;
+    font-size: 32px;
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.about-me-container p {
+    margin-bottom: 20px;
+    color: var(--color-medium-gray);
+    font-weight: 400;
+    line-height: 1.6;
+    text-align: justify;
+}
+
+
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .initial-section-container {
