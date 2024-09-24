@@ -845,27 +845,4 @@ select {
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
-    .initial-section-container {
-        flex-direction: column;
-        text-align: center;
-        gap: 20px;
-    }
-
-    .hello-text {
-        font-size: 36px;
-    }
-
-    .about-initial-text {
-        font-size: 18px;
-    }
-
-    .portfolio-picture {
-        width: 250px;
-        height: 250px;
-    }
-
-    .initial-section-list {
-        justify-content: center;
-    }
-}
+@media (max-width: 768px) {}
