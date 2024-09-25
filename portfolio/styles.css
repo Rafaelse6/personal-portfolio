@@ -735,7 +735,7 @@ select {
 
 .contact-container img {
     width: 465px;
-    height: 730px;
+   height: auto;
 }
 
 .contact-text h2 {
