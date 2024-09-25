@@ -103,6 +103,7 @@ section {
     display: block;
 }
 
+
 /* Body defaults */
 body {
     line-height: 1;
@@ -166,7 +167,6 @@ select {
 
 /* HEADER */
 
-/* About container styles */
 .about-container {
     padding: 30px 120px;
     margin: 0 auto;
@@ -175,7 +175,6 @@ select {
     width: 1136px;
 }
 
-/* Flex layout for the main list */
 .about-container ul {
     display: flex;
     justify-content: space-between;
@@ -183,14 +182,12 @@ select {
 }
 
 
-/* Flex layout for the sub-items */
 .about-itens {
     display: flex;
     align-items: center;
     white-space: nowrap;
     gap: 2em;
     color: var(--color-medium-gray);
-    /* Adjusted gap for better scalability */
 }
 
 .name,
@@ -712,37 +709,6 @@ select {
     margin-left: 30px;
 }
 
-/* Contact section */
-.contact-section {
-    display: flex;
-    flex-direction: column;
-    background-color: rgba(42, 122, 228, 0.3);
-    width: 100%;
-    min-height: 300px;
-    padding: 60px 0;
-}
-
-.contact-container {
-    display: flex;
-    padding: 0 60px;
-    margin: 0 auto;
-    font-size: 16px;
-    max-width: 1100px;
-    align-items: flex-start;
-}
-
-.contact-container h2 {
-    color: var(--color-medium-gray);
-    font-weight: bold;
-    font-size: 32px;
-    margin-left: 20px;
-}
-
-.contact-container p {
-    color: var(--color-medium-gray);
-    font-weight: 400;
-}
-
 /* Form styles */
 /* Contact section */
 .contact-section {
@@ -765,7 +731,7 @@ select {
 
 .contact-container img {
     width: 465px;
-    height: 565px;
+    height: 730px;
 }
 
 .contact-text h2 {
@@ -794,7 +760,8 @@ select {
     padding-top: 10px;
 }
 
-.contact-form input {
+.contact-form input,
+.contact-form button {
     background-color: var(--color-white);
     height: 56px;
     width: 660px;
@@ -802,6 +769,15 @@ select {
     padding: 10px;
     margin-top: 10px;
     margin-bottom: 10px;
+    border: none;
+    font-size: 16px;
+    font-family: inherit;
+    color: var(--color-medium-gray);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.contact-form button {
+    width: auto;
 }
 
 .contact-form textarea {
@@ -811,15 +787,22 @@ select {
 }
 
 .send-button {
+    background-color: var(--color-white);
+    /* mantém o fundo branco */
     color: var(--color-medium-gray);
+    /* texto na cor cinza */
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .send-button:hover {
     background-color: var(--color-medium-green);
+    /* cor de fundo ao hover */
     color: var(--color-white);
+    /* muda a cor do texto ao hover */
     cursor: pointer;
 }
-
 
 /* Footer Section */
 .footer-section {
@@ -845,4 +828,106 @@ select {
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {}
+/* Media Query for Tablets */
+@media (max-width: 768px) {
+
+    /* ABOUT */
+    .about-container {
+        display: flex;
+        justify-content: space-between;
+        padding: 0 50px;
+        margin: 0;
+    }
+
+    .name {
+        margin: 0;
+    }
+
+    .about-container ul {
+        display: flex;
+        gap: 370px;
+    }
+
+    .about-me-item,
+    .skills-item,
+    .hobbies-item,
+    .education-item,
+    .projects-item,
+    .contact-item {
+        display: none;
+        /* Esses itens não aparecerão */
+    }
+
+    .persona-email {
+        margin: 0;
+    }
+
+    /* INITIAL */
+    .initial-section-container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .initial-section-text {
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .initial-section-list {
+        list-style: none;
+        padding: 0;
+        margin-top: 20px;
+    }
+
+    .initial-section-list li {
+        margin: 10px 0;
+        margin-left: 20px;
+    }
+
+    .portfolio-picture {
+        display: none;
+        /* Imagens da seção inicial não aparecem */
+    }
+
+    /* Experience */
+    /* Experience section */
+    .experience-item {
+        flex-direction: column;
+    }
+
+    .experience-item img {
+        width: 100%;
+        height: auto;
+    }
+
+    .experience-text {
+        align-items: center;
+    }
+
+    /* Contact */
+    .contact-container {
+        margin: 0;
+        padding: 0;
+    }
+
+    .contact-text {
+        text-align: left;
+    }
+
+    .contact-text h2 {
+        margin-left: 50px;
+    }
+
+    .contact-text p {
+        margin-left: 50px;
+    }
+
+    .contact-form {
+        margin-left: 50px;
+    }
+
+    .contact-container img {
+        display: none;
+        /* Imagens na seção de contato não aparecem */
+    }
+}

@@ -9,6 +9,16 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
       rel="stylesheet"
     />
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+    ></script>
+    <script type="text/javascript">
+      (function () {
+        emailjs.init("MLLzMhHdWm9t2Mzjb");
+      })();
+    </script>
+    <script src="scripts/script.js"></script>
   </head>
   <body>
     <header class="about-container">
@@ -16,12 +26,12 @@
         <li><strong class="name">Rafael Santos</strong></li>
         <li>
           <ul class="about-itens">
-            <li><a href="#about">Sobre mim</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#hobbies">Hobbies</a></li>
-            <li><a href="#education">Formação</a></li>
-            <li><a href="#projects">Projetos</a></li>
-            <li><a href="#contact">Contato</a></li>
+            <li class="about-me-item"><a href="#about">Sobre mim</a></li>
+            <li class="skills-item"><a href="#skills">Skills</a></li>
+            <li class="hobbies-item"><a href="#hobbies">Hobbies</a></li>
+            <li class="education-item"><a href="#education">Formação</a></li>
+            <li class="projects-item"><a href="#projects">Projetos</a></li>
+            <li class="contact-item"><a href="#contact">Contato</a></li>
             <li>
               <strong class="persona-email"
                 ><a href="mailto:rafa.05125@gmail.com"
@@ -340,31 +350,39 @@
             Preencha o formulário abaixo e entrarei em contato o mais rápido
             possível.
           </p>
-          <form class="contact-form">
+          <form
+            class="contact-form"
+            onsubmit="event.preventDefault(); sendMail();"
+          >
             <input
               type="text"
               id="nome"
               name="nome"
               placeholder="Digite seu nome"
+              required
             />
             <input
               type="email"
               id="email"
               name="email"
               placeholder="Digite seu e-mail"
+              required
+            />
+            <input
+              type="text"
+              id="assunto"
+              name="assunto"
+              placeholder="Digite o assunto"
+              required
             />
             <textarea
-              id="subject"
-              name="subject"
+              id="mensagem"
+              name="mensagem"
               placeholder="Mensagem"
               style="height: 200px"
+              required
             ></textarea>
-            <input
-              class="send-button"
-              style="width: auto"
-              type="submit"
-              value="Enviar"
-            />
+            <button class="send-button" type="submit">Enviar</button>
           </form>
         </div>
       </div>
